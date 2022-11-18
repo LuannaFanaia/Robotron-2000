@@ -1,5 +1,37 @@
-const braco = document.querySelector("#braco");
 const controle = document.querySelectorAll("[data-controle]");
+const pecas = {
+	bracos: {
+		forca: 29,
+		poder: 35,
+		energia: -21,
+		velocidade: -5,
+	},
+
+	blindagem: {
+		forca: 41,
+		poder: 20,
+		energia: 0,
+		velocidade: -20,
+	},
+	nucleos: {
+		forca: 0,
+		poder: 7,
+		energia: 48,
+		velocidade: -24,
+	},
+	pernas: {
+		forca: 27,
+		poder: 21,
+		energia: -32,
+		velocidade: 42,
+	},
+	foguetes: {
+		forca: 0,
+		poder: 28,
+		energia: 0,
+		velocidade: -2,
+	},
+};
 
 controle.forEach((elemento) => {
 	elemento.addEventListener("click", (evento) => {
@@ -10,11 +42,6 @@ controle.forEach((elemento) => {
 function manipulaDados(operacao, controle) {
 	const pecas = controle.querySelector("[data-contador]");
 	if (operacao === "-") {
-		// if (braco.value > 0) {
-		// 	braco.value = parseInt(braco.value) - 1;
-		// } else {
-		//     braco.value = 0;
-		// }
 		pecas.value = parseInt(pecas.value) - 1;
 	} else {
 		pecas.value = parseInt(pecas.value) + 1;
